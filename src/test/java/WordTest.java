@@ -36,6 +36,12 @@ public class WordTest {
     assertEquals(1, testWord.getId());
   }
 
-  
+  @Test
+  public void find_returnsTaskWithSameId_secondTask() {
+    Word firstTestWord = new Word("Yo");
+    Word secondTestWord = new Word("Winning");
+    assertEquals(Word.find(secondTestWord.getId()), secondTestWord);
+  }
+
 
 }
