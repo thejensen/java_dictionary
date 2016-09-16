@@ -16,4 +16,20 @@ public class DefinitionTest {
     assertEquals(true, Definition.all().contains(secondTestDefinition));
   }
 
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList_0() {
+  Definition testDefinition = new Definition("A common greeting among young friends in US cities.");
+  Definition.clear();
+  assertEquals(Definition.all().size(), 0);
+  }
+
+  @Test
+  public void getId_definitionInstantiatesWithAnID_1() {
+    Definition.clear();
+    Definition testDefinition = new Definition("A common greeting among young friends in US cities.");
+    assertEquals(1, testDefinition.getId());
+  }
+
+  
+
 }
