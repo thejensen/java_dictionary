@@ -30,6 +30,4 @@ public class DefinitionTest {
     assertEquals(1, testDefinition.getId());
   }
 
-  
-
 }

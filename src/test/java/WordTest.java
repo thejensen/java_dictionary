@@ -29,5 +29,11 @@ public class WordTest {
     assertEquals(true, testWord.getDefinition().contains(testDefinition));
   }
 
+  @Test
+  public void getId_wordInstantiatesWithAnID_1() {
+    Word.clear();
+    Word testWord = new Word("Yo");
+    assertEquals(1, testWord.getId());
+  }
 
 }
