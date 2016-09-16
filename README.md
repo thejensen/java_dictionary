@@ -1,37 +1,44 @@
-# _{Application Name}_
+# _Dictionary_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A user-generated dictionary, Sept 16, 2016_
 
-#### By _**{List of contributors}**_
+#### By _**Sara Jensen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This application is designed for you to enter words, and their definitions. The homepage includes a space for entering words, and shows all the words you entered below. Click the word for its definition. **Further Development: If you haven't included a definition, the word will be highlighted so you can return to it later.**_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Make sure you have the Java Development Kit (JDK) and a Java Runtime Environment (JRE) installed._
+* _Install Gradle_
+* _Clone https://github.com/thejensen/java_dictionary to your desktop_
+* _In terminal, execute $gradle run_
+* _In your browser (preferably latest version of Chrome), go to localhost:4567._
+* _If the app doesn't initialize in the browser, contact me!_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+## Specs
+
+| Behavior | Input | Output |
+| --- | --- | --- |
+| Program returns a user-generated word | "Doubloon" | "Doubloon" |
+| " a user-generated definition | "The official currency of pirates."| "The official currency of pirates." |
+| " all words | "Doubloon", "Pirate" | "Doubloon", "Pirate" |
+| " all definitions | "The official currency of pirates."| "The official currency of pirates.", "A person who commits warlike acts at sea without the authorization of any nation." | "The official currency of pirates."| "The official currency of pirates.", "A person who commits warlike acts at sea without the authorization of any nation." |
+| " the definition of its corresponding word | "Doubloon" | "The official currency of pirates."| "The official currency of pirates." |
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you run into any issues, have questions, ideas or concerns, or want to make a contribution to the code, contact me at jensen.sara.e@gmail.com._
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Java, Spark, Velocity._
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_MIT License_**
