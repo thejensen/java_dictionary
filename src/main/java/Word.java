@@ -2,20 +2,20 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Word {
-  private String mWord;
+  private String mName;
   private static List<Word> instances = new ArrayList<Word>();
   private List<Definition> mDefinitions;
   private int mId;
 
-  public Word(String word) {
-    mWord = word;
+  public Word(String name) {
+    mName = name;
     instances.add(this);
     mDefinitions = new ArrayList<Definition>();
     mId = instances.size();
   }
 
-  public String getWord() {
-    return mWord;
+  public String getName() {
+    return mName;
   }
 
   public static List<Word> all() {

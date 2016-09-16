@@ -11,10 +11,7 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-
-      model.put("Queen", Word.all());
-      model.put("King", Definition.all());
-
+      model.put("words", Word.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -25,8 +22,18 @@ public class App {
       String definition = request.queryParams("definition");
       Word newWord = new Word(word);
       Definition newDefinition = new Definition(definition);
-
+      model.put("words", Word.all());
       model.put("template", "templates/index.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/word/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      Definition definition = Definition.find(Integer.parseInt(request.params(":id")));
+      model.put("word", word);
+      model.put("definition", definition);
+      model.put("template", "templates/definition.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

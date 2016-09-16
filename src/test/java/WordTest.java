@@ -43,5 +43,10 @@ public class WordTest {
     assertEquals(Word.find(secondTestWord.getId()), secondTestWord);
   }
 
+  @Test public void getName_returnsNameOfWord_String() {
+    Word testWord = new Word("Yo");
+    assertEquals("Yo", testWord.getName());
+  }
+
 
 }
