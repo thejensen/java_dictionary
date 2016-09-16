@@ -7,4 +7,22 @@ public class WordTest {
     Word testWord = new Word("Yo");
     assertEquals(true, testWord instanceof Word);
   }
+
+  @Test
+  public void all_returnsAllWords_true() {
+    Word firstTestWord = new Word("Yo");
+    Word secondTestWord = new Word("Winning");
+    assertEquals(true, Word.all().contains(firstTestWord));
+    assertEquals(true, Word.all().contains(secondTestWord));
+  }
+
+  @Test
+  public void getDefinition_returnsAllDefinitions_ArrayList() {
+    Word testWord = new Word("Yo");
+    Definition testDefinition = new Definition("A colloquial greeting among friends in US cities.");
+    testWord.addDefinition(testDefinition);
+    assertEquals(true, testWord.getDefinition().contains(testDefinition));
+  }
+
+
 }
