@@ -1,12 +1,15 @@
 public class Word {
-  private String mYaaas;
+  private String mWord;
+  // private List<Word> mInstances;
 
-}
+  public Word(String word) {
+    mWord = word;
+    // instances(this);
+  }
 
-public Definition(String yaaas) {
-  mYaaas = yaaas;
-}
+  public String getWord() {
+    return mWord;
+  }
 
-public String getYaaas() {
-  return mYaaas;
+
 }
