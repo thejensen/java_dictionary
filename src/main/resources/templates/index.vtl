@@ -1,18 +1,19 @@
 <h1>A Boss Collection: Dictionary</h1>
+  <hr>
 
 <form action="/" method="post">
   <label for="word">Enter a word</label>
   <p></p>
   <input id="word" name="word" type="text">
-  <p></p>
+  <hr>
   <label for="definition">Enter a definition</label>
   <p></p>
   <textarea class="form-control" rows="3" id="definition" name="definition" type="text"></textarea>
-  <p></p>
-
+  <hr>
   <button type="submit" class="btn btn-success">Add Entry</button>
 </form>
 
+<hr>
 <h3>Your words:</h3>
 <ul>
   #foreach ($word in $words)
