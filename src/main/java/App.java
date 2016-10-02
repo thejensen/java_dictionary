@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import spark.ModelAndView;
@@ -18,10 +20,7 @@ public class App {
 
     post("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String word = request.queryParams("word");
-      String definition = request.queryParams("definition");
-      Word newWord = new Word(word);
-      Definition newDefinition = new Definition(definition);
+      Word word = new Word(request.queryParams("word"));
       model.put("words", Word.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
@@ -35,14 +34,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/word/:id", (request, response) -> {
+
+    post("/word/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String definition = request.queryParams("anotherDefinition");
-      Definition newDefinition = new Definition(definition);
+      Definition anotherDefinition = new Definition(request.queryParams("anotherDefinition"));
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-      word.addDefinition(newDefinition);
+      word.addDefinition(anotherDefinition);
       model.put("word", word);
-      model.put("definition", definition);
       model.put("template", "templates/definition.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

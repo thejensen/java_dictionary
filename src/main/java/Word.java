@@ -22,23 +22,23 @@ public class Word {
     return instances;
   }
 
-  public void addDefinition(Definition definition) {
-    mDefinitions.add(definition);
-  }
-
-  public List<Definition> getDefinition() {
-    return mDefinitions;
-  }
-
-  public static void clear() {
-    instances.clear();
-  }
-
   public int getId() {
     return mId;
   }
 
   public static Word find(int id) {
     return instances.get(id-1);
+  }
+
+  public void addDefinition(Definition definition) {
+    mDefinitions.add(definition);
+  }
+
+  public List<Definition> getDefinitions() {
+    return mDefinitions;
+  }
+
+  public static void clear() {
+    instances.clear();
   }
 }

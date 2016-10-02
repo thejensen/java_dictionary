@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="WordTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-02T15:10:06" hostname="MacBook-Pro.domain" time="0.004">
   <properties/>
   <testcase name="getId_wordInstantiatesWithAnID_1" classname="WordTest" time="0.001"/>
   <testcase name="all_returnsAllWords_true" classname="WordTest" time="0.0"/>
   <testcase name="getDefinition_returnsAllDefinitions_ArrayList" classname="WordTest" time="0.0"/>
+=======
+<testsuite name="WordTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-02T14:35:49" hostname="MacBook-Pro.domain" time="0.002">
+  <properties/>
+  <testcase name="getId_wordInstantiatesWithAnID_1" classname="WordTest" time="0.0"/>
+  <testcase name="all_returnsAllWords_true" classname="WordTest" time="0.0"/>
+  <testcase name="getDefinitions_returnsAllDefinitions_ArrayList" classname="WordTest" time="0.0"/>
+>>>>>>> multiples
   <testcase name="getName_returnsNameOfWord_String" classname="WordTest" time="0.0"/>
   <testcase name="find_returnsTaskWithSameId_secondTask" classname="WordTest" time="0.0"/>
   <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.0"/>
