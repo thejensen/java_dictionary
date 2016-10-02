@@ -3,6 +3,8 @@ import java.util.Map;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
   public static void main(String[] args) {
@@ -27,12 +29,8 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       String word = request.queryParams("word");
       // we're gathering input from our form, whose input name is "word", and storing it as a variable called word, which is supposed to be a string, so doth we declare!
-      String definition = request.queryParams("definition");
       Word newWord = new Word(word);
       // Even though we so stored our form's input in a variable, we have to give it to our backend to do anything with it. So here, we startup a new variable that is part of the Word class (or Word newWord), that is a new Word(or instantiated object), in which we pass our word gathered from the form as an argument. It's like new Word() teleports our word to the backend. Poof, be stored and transformed little word!!!
-      Definition newDefinition = new Definition(definition);
-      newWord.addDefinition(newDefinition);
-      // here! we made a newWord Word object and we must pass a Definition object through the addDefinition method we wrote in the Word class to add a definition to the Word's Definition arraylist attribute.
       model.put("words", Word.all());
       // see above. I think you have to put this in the post request too? Honestly, I don't remember if this line is necessary...
       model.put("template", "templates/index.vtl");
@@ -46,28 +44,21 @@ public class App {
 
       //request.params(":id") is sparky notation that grabs from "get("/word/:id"), which is dynamically generated in index.vtl as word.getId(). Tricky, right? So the argument passed in the find function to poop out the object we're looking for is generated from index.vtl! Buuut, the :id is always a string somehow, so we need to use Integer.parseInt() to convert it to an int. The webs we weave.
       model.put("word", word);
-      model.put("definitions", word.getDefinitions());
-
-
       model.put("template", "templates/definition.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
 
     post("/word/:id", (request, response) -> {
+      // please don't forget to include the form action and method in your form tag, ok?
       Map<String, Object> model = new HashMap<String, Object>();
+      Definition definition = new Definition(request.queryParams("anotherDefinition"));
+      // definition grabs the input for "anotherDefinition".
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-
-
-      String definition = request.queryParams("anotherDefinition");
-      Definition anotherDefinition = new Definition(definition);
-      word.addDefinition(anotherDefinition);
-
-
-      model.put("wtf", anotherDefinition);
-      model.put("definitions", word.getDefinitions());
-
-
+      // this locates the object via its unique id, not sure that it's necessary for the post request? but I need the word to act on in the front end, so yes, it's necessary here.
+      word.setDefinition(definition);
+      // here, supposedly we're passing the definition we made a definition object into the setDefinition function which takes Definitions and puts them into an arraylist.
+      model.put("word", word);
       model.put("template", "templates/definition.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

@@ -14,18 +14,10 @@ public class DefinitionTest {
   }
 
   @Test
-  public void all_returnsAllDefinitions_true() {
-    Definition firstTestDefinition = new Definition("A colloquial greeting among friends in US cities.");
-    Definition secondTestDefinition = new Definition("A feeling that your accomplishments will lead to more accomplishments.");
-    assertEquals(true, Definition.all().contains(firstTestDefinition));
-    assertEquals(true, Definition.all().contains(secondTestDefinition));
-  }
-
-  @Test
   public void clear_emptiesAllDefinitionsFromArrayList_0() {
-  Definition testDefinition = new Definition("A common greeting among young friends in US cities.");
-  Definition.clear();
-  assertEquals(Definition.all().size(), 0);
+    Definition testDefinition = new Definition("A common greeting among young friends in US cities.");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
   }
 
   @Test
@@ -35,9 +27,4 @@ public class DefinitionTest {
     assertEquals(1, testDefinition.getId());
   }
 
-  public void find_returnsTaskWithSameId_secondTask() {
-    Definition firstDefinition = new Definition("A common greeting among young friends in US cities.");
-    Definition secondTestDefinition = new Definition("A feeling that your accomplishments will lead to more accomplishments.");
-    assertEquals(Definition.find(secondTestDefinition.getId()), secondTestDefinition);
-  }
 }
