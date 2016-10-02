@@ -38,7 +38,8 @@ public class App {
     post("/word/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Definition anotherDefinition = new Definition(request.queryParams("anotherDefinition"));
-      Word word = Word.find(Integer.parseInt(request.params(":id")));      word.addDefinition(anotherDefinition);
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      word.addDefinition(anotherDefinition);
       model.put("word", word);
       model.put("template", "templates/definition.vtl");
       return new ModelAndView(model, layout);
