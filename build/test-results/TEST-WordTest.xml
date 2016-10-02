@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-02T01:08:33" hostname="MacBook-Pro.domain" time="0.002">
+<testsuite name="WordTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-02T14:35:49" hostname="MacBook-Pro.domain" time="0.002">
   <properties/>
-  <testcase name="getId_wordInstantiatesWithAnID_1" classname="WordTest" time="0.001"/>
+  <testcase name="getId_wordInstantiatesWithAnID_1" classname="WordTest" time="0.0"/>
   <testcase name="all_returnsAllWords_true" classname="WordTest" time="0.0"/>
   <testcase name="getDefinitions_returnsAllDefinitions_ArrayList" classname="WordTest" time="0.0"/>
   <testcase name="getName_returnsNameOfWord_String" classname="WordTest" time="0.0"/>

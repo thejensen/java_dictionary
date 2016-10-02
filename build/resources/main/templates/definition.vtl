@@ -1,26 +1,15 @@
 <h1>$word.getName()</h1>
-
-
-
-<h2><strong>$wtf</strong></h2>
-<h2><strong>$definitions</strong></h2>
-
-
-
-<h3>Definition(s):</h3>
-<h2>$word.getDefinitions()</h2>
 <ul>
-  #foreach ($definition in $definitions)
-    <li>$definition</li>
+  #foreach ($definition in $word.getDefinitions())
+    <li>$definition.getDefinition()</li>
   #end
 </ul>
 
-<form>
-<label for="anotherDefinition">Add an alternate definition</label>
-<p></p>
-<textarea class="form-control" rows="3" id="anotherDefinition" name="anotherDefinition" type="text"></textarea>
-<hr>
-<button type="submit" class="btn btn-success">Add additional entry</button>
+<form action="/word/$word.getId()" method="post">
+  <label for="anotherDefinition">Add a definition</label>
+  <input id="anotherDefinition" name="anotherDefinition" type="text"></input>
+  <hr>
+  <button type="submit" class="btn btn-success">Add entry</button>
 </form>
 
 <h4><a href="/">Homepage</a></h4>
