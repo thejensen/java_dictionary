@@ -1,0 +1,22 @@
+<h1>A Boss Collection: Dictionary</h1>
+  <hr>
+
+<form action="/" method="post">
+  <label for="word">Enter a word</label>
+  <p></p>
+  <input id="word" name="word" type="text">
+  <hr>
+  <label for="definition">Enter a definition</label>
+  <p></p>
+  <textarea class="form-control" rows="3" id="definition" name="definition" type="text"></textarea>
+  <hr>
+  <button type="submit" class="btn btn-success">Add Entry</button>
+</form>
+
+<hr>
+<h3>Your words:</h3>
+<ul>
+  #foreach ($word in $words)
+    <li><a href="/word/$word.getId()">$word.getName()</a></li>
+  #end
+</ul>
