@@ -22,11 +22,14 @@ public class WordTest {
   }
 
   @Test
-  public void getDefinition_returnsAllDefinitions_ArrayList() {
+  public void getDefinitions_returnsAllDefinitions_ArrayList() {
     Word testWord = new Word("Yo");
     Definition testDefinition = new Definition("A colloquial greeting among friends in US cities.");
+    Definition secondTestDefinition = new Definition("Sometimes it means just Hi and a response isn't necessary, so.");
     testWord.addDefinition(testDefinition);
-    assertEquals(true, testWord.getDefinition().contains(testDefinition));
+    testWord.addDefinition(secondTestDefinition);
+    assertEquals(true, testWord.getDefinitions().contains(testDefinition));
+    assertEquals(true, testWord.getDefinitions().contains(secondTestDefinition));
   }
 
   @Test
