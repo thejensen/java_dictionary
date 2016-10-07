@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-<h1>$word.getName():</h1>
-
-<ul>
-  #foreach ($definition in $word.getDefinitions())
-    <li>$definition.getDefinition()</li>
-</ul>
-
-<form action="/word/$word.getId()" method="post">
-<label for="anotherDefinition">Enter a anotherDefinition</label>
-<p></p>
-<textarea class="form-control" rows="3" id="anotherDefinition" name="anotherDefinition" type="text"></textarea>
-<hr>
-<button type="submit" class="btn btn-success">Add Entry</button>
-=======
 <h1>$word.getName()</h1>
 <ul>
   #foreach ($definition in $word.getDefinitions())
@@ -25,7 +10,6 @@
   <input id="anotherDefinition" name="anotherDefinition" type="text"></input>
   <hr>
   <button type="submit" class="btn btn-success">Add entry</button>
->>>>>>> multiples
 </form>
 
 <h4><a href="/">Homepage</a></h4>

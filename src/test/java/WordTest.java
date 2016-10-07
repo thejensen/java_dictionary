@@ -50,6 +50,4 @@ public class WordTest {
     Word testWord = new Word("Yo");
     assertEquals("Yo", testWord.getName());
   }
-
-
 }
